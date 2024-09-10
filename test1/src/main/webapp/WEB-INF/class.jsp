@@ -13,6 +13,7 @@
 	}
 </style>
 <body>
+	
 	<div id="app">
 		<div v-for = "item in list">
 			<div>{{item.className}}</div> 
@@ -69,5 +70,6 @@
 			self.fnGetList();
         }
     });
+	//0910
     app.mount('#app');
 </script>
