@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.test1.mapper.TestMapper">
+	<select id="testList" parameterType="hashmap" resultType="com.example.test1.model.Test">
+		SELECT *
+		FROM TEST_PRODUCT
+		WHERE PRODUCT_NO = #{productNo}
+	</select>
+	
+	<delete id="testRemove" parameterType="hashmap">
+		DELETE 
+		FROM TEST_PRODUCT
+		WHERE PRODUCT_NO = #{productNo}
+	</delete>
+	
+	<update id="testUpdate" parameterType="hashmap">
+		UPDATE TEST_PRODUCT
+		SET PRODUCT_PRICE = #{productPrice}
+		WHERE PRODUCT_NO = #{productNo}
+	</update>
+	
+	<insert id="testInsert" parameterType="hashmap">
+		INSERT INTO TEST_PRODUCT
+		VALUES(PRODUCT_SEQ.NEXTVAL, #{productName}, #{productPrice})
+	</insert>
+</mapper>
