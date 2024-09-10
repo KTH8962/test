@@ -17,7 +17,7 @@ import com.google.gson.Gson;
 
 @Controller
 public class TestController {
-	
+	//전담전담전담전담전담전담전담전담
 	@Autowired
 	TestService testService;
 	
