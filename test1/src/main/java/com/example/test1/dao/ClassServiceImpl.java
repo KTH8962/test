@@ -22,6 +22,14 @@ public class ClassServiceImpl implements ClassService{
 		resultMap.put("result", "success");
 		return resultMap;
 	}
+
+	@Override
+	public HashMap<String, Object> classJoin(HashMap<String, Object> map) {
+		HashMap<String,Object> resultMap = new HashMap<>();
+		classMapper.classJoin(map);
+		resultMap.put("result", "success");
+		return resultMap;
+	}
 	
 
 }

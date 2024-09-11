@@ -9,5 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ClassMapper {
 	
 	List<Class> classList(HashMap<String,Object> map);
+	
+	void classJoin(HashMap<String,Object> map);
 
 }

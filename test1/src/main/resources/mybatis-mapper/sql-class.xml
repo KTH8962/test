@@ -8,7 +8,7 @@
 	</select>
 
 
-	<insert id="joinClass" parameterType="hashmap">
+	<insert id="classJoin" parameterType="hashmap">
 		insert into tbl_participant (userid, class_no, join_date, count) values (#{userId}, #{classNo}, #{joinDate}, 1)
 	</insert>
 </mapper>	

@@ -24,12 +24,26 @@ public class ClassController {
 
         return "/class";
     }
+	
+	@RequestMapping("/class-join.do")
+	 public String classJoin(Model model) throws Exception{
+
+       return "/class-join";
+   }
 
 	@RequestMapping(value = "/class-list.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public String searchBbsList(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+	public String classList(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap = classService.classList(map);
+		return new Gson().toJson(resultMap);
+	}
+	
+	@RequestMapping(value = "/class-join.dox", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+	@ResponseBody
+	public String classJoin(Model model, @RequestParam HashMap<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap = classService.classJoin(map);
 		return new Gson().toJson(resultMap);
 	}
 }
