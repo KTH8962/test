@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.test1.mapper.OnedayMapper">
+	<select id="onedayList" parameterType="hashmap" resultType="com.example.test1.model.Oneday">
+		select * from tbl_class
+	</select>
+	
+	<select id="onedayDetail" parameterType="hashmap" resultType="com.example.test1.model.Oneday">
+		select * from tbl_class 
+		where class_no = #{classNo}
+	</select>
+
+	<insert id="onedayJoin" parameterType="hashmap">
+		insert into tbl_participant (userid, class_no, join_date, count) values (#{userId}, #{classNo}, sysdate, 1)
+	</insert>
+
+
+	
+</mapper>	

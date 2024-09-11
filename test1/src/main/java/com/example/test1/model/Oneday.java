@@ -1,7 +1,7 @@
 package com.example.test1.model;
 import lombok.Data;
 
-public class Class {
+public class Oneday {
 
 	private String userId;
 	private String classNo;
